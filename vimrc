@@ -45,6 +45,7 @@ Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'mxw/vim-jsx.git'
 " colorschemes
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'noahfrederick/vim-hemisu'
 " surroundings
 Plugin 'tpope/vim-surround'
 
@@ -66,7 +67,8 @@ filetype plugin indent on    " required
 " make vim recognise .md file as markdown instead of modular2
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd FileType javascript setlocal sw=2 sts=2 et
-autocmd FileType c,python setlocal sw=4 sts=4 et
+autocmd FileType c,sh,python setlocal sw=4 sts=4 et
+autocmd FileType makefile setlocal sw=4 sts=4
 
 set encoding=utf-8
 set laststatus=2
@@ -74,7 +76,7 @@ set hlsearch
 set incsearch
 set number
 set backspace=indent,eol,start
-set tabstop=8
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -83,10 +85,16 @@ set autoindent
 set cindent
 
 " colorscheme setting
-set background=dark
+let hour=strftime('%H')
+if hour<12 && hour>5
+    set background=light
+else
+    set background=dark
+endif
 set t_Co=256 " terminal 256/16
 
 colo jellybeans
+" colo hemisu
 
 " cursorline highlight, must set after colorscheme
 set cursorline
