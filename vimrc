@@ -43,6 +43,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'mxw/vim-jsx.git'
+Plugin 'wavded/vim-stylus'
 " colorschemes
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'noahfrederick/vim-hemisu'
@@ -66,8 +67,9 @@ filetype plugin indent on    " required
 
 " make vim recognise .md file as markdown instead of modular2
 autocmd BufNewFile,BufRead *.md set filetype=markdown
-autocmd FileType javascript setlocal sw=2 sts=2 et
-autocmd FileType c,sh,python setlocal sw=4 sts=4 et
+autocmd BufNewFile,BufRead *.hbs set filetype=html
+autocmd FileType javascript,html,css,stylus setlocal sw=2 sts=2 et
+autocmd FileType c,sh,python,rust setlocal sw=4 sts=4 et
 autocmd FileType makefile setlocal sw=4 sts=4
 
 set encoding=utf-8
