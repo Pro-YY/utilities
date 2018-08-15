@@ -41,7 +41,6 @@ Plugin 'ntpeters/vim-better-whitespace'
 " language syntax support
 Plugin 'rust-lang/rust.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'mxw/vim-jsx.git'
 Plugin 'wavded/vim-stylus'
 " colorschemes
